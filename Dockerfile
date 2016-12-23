@@ -7,11 +7,12 @@ ENV KCPTUN_URL https://github.com/xtaci/kcptun/releases/download/v${KCPTUN_VER}/
 WORKDIR /tmp/
 
 RUN set -ex \
-  && apt add --no-cache --update  curl \
+  && apk add --no-cache curl \
   && curl -sSL $KCPTUN_URL | tar xz \
   && chmod +x ./* \
   && mv ./* /usr/local/bin \
-  && rm -fr /var/lib/apt/lists/*
+  && rm -fr /var/lib/apk/lists/* \
+  && rm -rf /var/cache/apk/*
 
 ENV TARGET_ADDR 127.0.0.1
 ENV TARGET_PORT 8388
