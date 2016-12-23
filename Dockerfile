@@ -14,13 +14,13 @@ RUN set -ex \
   && rm -fr /var/lib/apk/lists/* \
   && rm -rf /var/cache/apk/*
 
-ENV REMOTE_ADDR 127.0.0.1
+ENV REMOTE_ADDR www.google.com
 ENV REMOTE_PORT 29900
 ENV LISTEN_ADDR 0.0.0.0
 ENV LISTEN_PORT 8388
 ENV MODE fast
 ENV CRYPT aes
-ENV KEY 820629
+ENV KEY helloworld
 ENV AUTOEXPIRE 60
 #ENV CONN 4
 #ENV MTU 1400
