@@ -14,8 +14,8 @@ RUN set -ex \
   && rm -fr /var/lib/apk/lists/* \
   && rm -rf /var/cache/apk/*
 
-ENV TARGET_ADDR 127.0.0.1
-ENV TARGET_PORT 29900
+ENV REMOTE_ADDR 127.0.0.1
+ENV REMOTE_PORT 29900
 ENV LISTEN_ADDR 0.0.0.0
 ENV LISTEN_PORT 8388
 ENV MODE fast
@@ -35,7 +35,7 @@ ENV LOG=
 EXPOSE $LISTEN_PORT/udp
 
 CMD client_linux_amd64 -l $LISTEN_ADDR:$LISTEN_PORT \
-                       -t $TARGET_ADDR:$TARGET_PORT \
+                       -r $REMOTE_ADDR:$REMOTE_PORT \
                        --key $KEY \
                        --crypt $CRYPT \
                        --mode $MODE \
