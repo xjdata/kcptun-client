@@ -1,4 +1,4 @@
-FROM apline:3.4
+FROM alpine:3.4
 
 
 ENV KCPTUN_VER 20161207
