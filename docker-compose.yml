@@ -1,0 +1,25 @@
+version: '2'
+services:
+# sudo docker-compose up -d -p kcptun
+#
+  kcptun-client:
+    image: daocloud.io/xjdata/kcptun-client
+    environment:
+      - LISTEN_ADDR=127.0.0.1
+      - LISTEN_PORT=8388
+      - REMOTE_ADDR=your.server.ip.or.domain
+      - REMOTE_PORT=your.kcptun.server.set.prot:29900
+      - KEY=your.kcptun.server.set.key
+      - CRYPT=aes
+      - MODE=fast
+      - CONN=1
+      - AUTOEXPIRE=60
+      - MTU=1350
+      - SNDWND=1024
+      - RCVWND=1024
+      - DATASHARD=10
+      - PARITYSHARD=3
+      - DSCP=0
+      - NOCOMP=false
+      - LOG=/tmp/kcptun.log
+    restart: always
