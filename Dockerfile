@@ -36,7 +36,7 @@ EXPOSE $LISTEN_PORT/udp
 
 CMD client_linux_amd64 -l $LISTEN_ADDR:$LISTEN_PORT \
                        -r $REMOTE_ADDR:$REMOTE_PORT \
-                       --key $KEY 
+                       --key $KEY \
                        #--crypt $CRYPT \
                        #--mode $MODE \
                        #--conn $CONN \
