@@ -36,16 +36,16 @@ EXPOSE $LISTEN_PORT/udp
 
 CMD client_linux_amd64 -l $LISTEN_ADDR:$LISTEN_PORT \
                        -r $REMOTE_ADDR:$REMOTE_PORT \
-                       --key $KEY \
-                       --crypt $CRYPT \
-                       --mode $MODE \
-                       --conn $CONN \
-                       --autoexpire $AUTOEXPIRE \
-                       --mtu $MTU \
-                       --sndwnd $SNDWND \
-                       --rcvwnd $RCVWND \
-                       --datashard $DATASHARD \
-                       --parityshard $PARITYSHARD \
-                       --dscp $DSCP \
-                       --nocomp $NOCOMP \
+                       --key $KEY 
+                       #--crypt $CRYPT \
+                       #--mode $MODE \
+                       #--conn $CONN \
+                       #--autoexpire $AUTOEXPIRE \
+                       #--mtu $MTU \
+                       #--sndwnd $SNDWND \
+                       #--rcvwnd $RCVWND \
+                       #--datashard $DATASHARD \
+                       #--parityshard $PARITYSHARD \
+                       #--dscp $DSCP \
+                       #--nocomp $NOCOMP \
                        --log $LOG
