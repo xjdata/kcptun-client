@@ -20,27 +20,26 @@ ENV LISTEN_ADDR 0.0.0.0
 ENV LISTEN_PORT 8388
 ENV MODE fast
 ENV CRYPT aes
-ENV KEY ^password$
-ENV CONN 4
+ENV KEY 820629
 ENV AUTOEXPIRE 60
-ENV MTU 1400
-ENV SNDWND 2048
-ENV RCVWND 2048
-ENV DATASHARD 10
-ENV PARITYSHARD 3
-ENV DSCP 0
-ENV NOCOMP false
-ENV LOG=
+#ENV CONN 4
+#ENV MTU 1400
+#ENV SNDWND 2048
+#ENV RCVWND 2048
+#ENV DATASHARD 10
+#ENV PARITYSHARD 3
+#ENV DSCP 0
+#ENV NOCOMP false
+#ENV LOG=
 
 EXPOSE $LISTEN_PORT/udp
 
 CMD client_linux_amd64 -l $LISTEN_ADDR:$LISTEN_PORT \
                        -r $REMOTE_ADDR:$REMOTE_PORT \
                        --key $KEY \
-                       #--crypt $CRYPT \
-                       #--mode $MODE \
+                       --crypt $CRYPT \
+                       --mode $MODE \
                        #--conn $CONN \
-                       #--autoexpire $AUTOEXPIRE \
                        #--mtu $MTU \
                        #--sndwnd $SNDWND \
                        #--rcvwnd $RCVWND \
@@ -48,4 +47,5 @@ CMD client_linux_amd64 -l $LISTEN_ADDR:$LISTEN_PORT \
                        #--parityshard $PARITYSHARD \
                        #--dscp $DSCP \
                        #--nocomp $NOCOMP \
-                       --log $LOG
+                       #--log $LOG
+                       --autoexpire $AUTOEXPIRE 
