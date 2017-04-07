@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER xjdata , <xjdata@gmail.com>
 
-ENV KCPTUN_VER 20170217
+ENV KCPTUN_VER 20170329
 ENV KCPTUN_URL https://github.com/xtaci/kcptun/releases/download/v${KCPTUN_VER}/kcptun-linux-amd64-${KCPTUN_VER}.tar.gz
 
 WORKDIR /tmp/
